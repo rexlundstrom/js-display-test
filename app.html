@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APP NAME: A Coding Challenge by Rex Lundstrom</title>
+    <title>HUNDO: A Coding Challenge by Rex Lundstrom</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,8 +41,8 @@
       <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
-            <img src="/img/APPNAMELogo.svg" height="30" alt="" />
-            APP NAME
+            <img src="/img/hundo.png" height="30" alt="" />
+            HUNDO
           </a>
           <button
             class="navbar-toggler"
@@ -58,7 +58,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/app.html"
@@ -88,9 +88,71 @@
     </header>
 
     <main class="container mt-3">
-      <h1>App UI GOES HERE</h1>
-      <input type="text" placeholder="Enter a Message" id="message" />
-      <button class="btn btn-primary" id="btnSubmit">Display Message</button>
+      <div class="row row-cols-1 row-cols-md-2">
+        <div class="col">
+          <h1>Hundo: A Coding Challenge</h1>
+          <h4 class="lead">
+            Write a program that displays numbers from <b>0 to 100</b>, showing
+            all even values in <b>bold</b>.
+          </h4>
+          <hr />
+          <h2>Instructions</h2>
+          <p>
+            Enter a starting value and an ending value. Press the button to
+            display all values in between with even numbers in <b>bold</b>.
+          </p>
+        </div>
+        <!-- App -->
+        <div class="col">
+          <form action="#">
+            <h5>Enter Values</h5>
+            <!-- inputs for start/end -->
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="startValue" class="form-label"
+                  >Starting Number</label
+                >
+                <input
+                  type="number"
+                  name="startValue"
+                  id="startValue"
+                  placeholder="Starting Number"
+                  aria-label="Starting Number"
+                  value="0"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="endValue" class="form-label">Ending Number</label>
+                <input
+                  type="number"
+                  name="endValue"
+                  id="endValue"
+                  placeholder="Ending Number"
+                  aria-label="Ending Number"
+                  value="0"
+                />
+              </div>
+              <div class="col-12 text-end">
+                <button class="btn btn-primary" id="btnSubmit" type="button">
+                  Display the Hundo
+                </button>
+              </div>
+            </div>
+
+            <hr />
+            <!-- Results area -->
+            <h2 class="mt-3">Results</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <tbody id="results">
+                  <!-- JS results go here -->
+
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer class="footer-main mt-3">
@@ -366,7 +428,7 @@
     <script>
       document
         .getElementById("btnSubmit")
-        .addEventListener("click", displayMessage);
+        .addEventListener("click", getValues);
     </script>
   </body>
 </html>
