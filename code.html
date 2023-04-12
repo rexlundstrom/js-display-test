@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HUNDO: A Coding Challenge by Rex Lundstrom</title>
+    <title>PRIM3 TIM3: A Coding Challenge by Rex Lundstrom</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,7 +43,7 @@
         <div class="container">
           <a class="navbar-brand" href="/index.html">
             <img src="/img/APPNAMELogo.svg" height="30" alt="" />
-            HUNDO
+            PRIM3 TIM3
           </a>
           <button
             class="navbar-toggler"
@@ -70,17 +70,28 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://github.com/rexlundstrom"
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://github.com/rexlundstrom"
                   >The Repo</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://rex-portfolio.netlify.app/"
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://rex-portfolio.netlify.app/"
                   >About</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://rex-portfolio.netlify.app/#blog"
+                  >Blog</a
+                >
               </li>
             </ul>
           </div>
@@ -94,27 +105,88 @@
         <div class="col-12 col-lg-8">
           <pre class="line-numbers">
             <code class="language-js">
-function displayMessage() {
-    let msg = document.getElementById('message').value;
-    // alert(msg);
+// get start/end numbers from inputs
+// Entry point AKA Controller function
+function getValues() {
+  let startValue = document.getElementById("startValue").value;
+  let endValue = document.getElementById("endValue").value;
 
-    Swal.fire(
-        {
-            backdrop: false,
-            title: 'HUNDO',
-            text: msg
-        }
-    );
-}
+  let startNumber = parseInt(startValue);
+  let endNumber = parseInt(endValue);
+
+  let numbersArray = generateNumbers(startNumber, endNumber);
+  displayNumbers(numbersArray)
+};
+
+
+
+// generate numbers to display
+// business/logic function
+function generateNumbers(start, end) {
+
+  let numbersArray = [];
+
+  for (let i = start; i <= end; i++) {
+    numbersArray.push(i);
+  }
+
+  return numbersArray;
+};
+
+// places generated numbers on a page AND bolding even numbers
+// View function
+function displayNumbers (numbers) {
+
+  let results = '';
+
+  for (let i = 0; i < numbers.length; i++) {
+    let currNumber = numbers[i];
+
+    if (currNumber % 2 === 0) {
+      results+= '&lttr>&lttd class="evenBold">' + currNumber + "&lt/td>&lt/tr>"; 
+    } else {
+      results+= "&lttr>&lttd>" + currNumber + "&lt/td>&lt/tr>";
+    }
+
+
+  }
+
+
+  let tableBody = document.getElementById('results');
+  tableBody.innerHTML = results;
+};
 
 
             </code>
           </pre>
         </div>
         <div class="col-12 col-lg-4">
-          <p>The code is structured in one function</p>
-          <h5>displayMessage</h5>
-          <p>prints out the message</p>
+          <p>
+            There are three key functions that make this program run properly:
+          </p>
+          <h5>getValues</h5>
+          <p>
+            this function searches our HTML by ID for a corresponding value that
+            the user enters
+          </p>
+          <h5>generateNumbers</h5>
+          <p>
+            this function will take our two values and create an array of every
+            number between them. Using a for loop (1, 5) becomes [1, 2, 3, 4, 5]
+          </p>
+          <h5>displayNumbers</h5>
+          <p>
+            this function not only displays our numbers on the document as its
+            name suggests, but it checks each number to see if it meets a
+            condition, and it can alter certain numbers in any way we tell it
+            to. This function could easily be programmed to have all multiples
+            of three in itallics, or only display numbers that contain a zero,
+            etc.
+          </p>
+          <p>
+            Together, these functions keep each piece of complexity separate, so
+            that it is easy to read, understand, and manipulate.
+          </p>
         </div>
       </div>
     </main>

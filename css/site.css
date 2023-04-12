@@ -109,3 +109,7 @@ Header
 .appLogo {
     max-width: 400px;
 }
+
+.evenBold {
+  font-weight: 700;
+}

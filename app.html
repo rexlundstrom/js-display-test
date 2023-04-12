@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HUNDO: A Coding Challenge by Rex Lundstrom</title>
+    <title>PRIM3 TIM3: A Coding Challenge by Rex Lundstrom</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,8 +41,8 @@
       <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
-            <img src="/img/hundo.png" height="30" alt="" />
-            HUNDO
+            <img src="/img/PRIM3 TIM3.png" height="30" alt="" />
+            PRIM3 TIM3
           </a>
           <button
             class="navbar-toggler"
@@ -69,17 +69,28 @@
                 <a class="nav-link" href="/code.html">The Code</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://github.com/rexlundstrom"
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://github.com/rexlundstrom"
                   >The Repo</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://rex-portfolio.netlify.app/"
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://rex-portfolio.netlify.app/"
                   >About</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://rex-portfolio.netlify.app/#blog"
+                  >Blog</a
+                >
               </li>
             </ul>
           </div>
@@ -90,16 +101,22 @@
     <main class="container mt-3">
       <div class="row row-cols-1 row-cols-md-2">
         <div class="col">
-          <h1>Hundo: A Coding Challenge</h1>
+          <h1>PRIM3 TIM3: A Coding Challenge</h1>
           <h4 class="lead">
-            Write a program that displays numbers from <b>0 to 100</b>, showing
-            all even values in <b>bold</b>.
+            Write a program that displays numbers from a user-selected starting
+            value until an ending value, showing all prime numbers in
+            <b>bold</b>.
           </h4>
           <hr />
           <h2>Instructions</h2>
+          <br>
           <p>
-            Enter a starting value and an ending value. Press the button to
-            display all values in between with even numbers in <b>bold</b>.
+            Enter a starting value and an ending value.
+
+            <br />
+            <br />
+
+            Press the button to display all prime values in <b>bold</b>.
           </p>
         </div>
         <!-- App -->
@@ -134,7 +151,7 @@
               </div>
               <div class="col-12 text-end">
                 <button class="btn btn-primary" id="btnSubmit" type="button">
-                  Display the Hundo
+                  Display Primes
                 </button>
               </div>
             </div>
@@ -146,7 +163,6 @@
               <table class="table table-striped">
                 <tbody id="results">
                   <!-- JS results go here -->
-
                 </tbody>
               </table>
             </div>
@@ -426,9 +442,7 @@
     <!-- App JS -->
     <script src="/js/site.js"></script>
     <script>
-      document
-        .getElementById("btnSubmit")
-        .addEventListener("click", getValues);
+      document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
   </body>
 </html>

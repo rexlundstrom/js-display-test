@@ -35,7 +35,12 @@ function displayNumbers (numbers) {
   for (let i = 0; i < numbers.length; i++) {
     let currNumber = numbers[i];
 
-    results = results + '<tr><td>' + currNumber + "</td></tr>";
+    if (currNumber % 2 === 0) {
+      results+= '<tr><td class="evenBold">' + currNumber + "</td></tr>"; 
+    } else {
+      results+= "<tr><td>" + currNumber + "</td></tr>";
+    }
+
 
   }
 
