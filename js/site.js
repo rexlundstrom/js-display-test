@@ -7,8 +7,21 @@ function getValues() {
   let startNumber = parseInt(startValue);
   let endNumber = parseInt(endValue);
 
-  let numbersArray = generateNumbers(startNumber, endNumber);
-  displayNumbers(numbersArray)
+  if (typeof(startNumber) !== 'number' && typeof(endNumber) !== 'number') {
+
+    let numbersArray = generateNumbers(startNumber, endNumber);
+    displayNumbers(numbersArray);
+
+  } else {
+    // error message
+    Swal.fire({
+      icon: "error",
+      title: "Oops!",
+      text: "Please enter valid numbers only",
+      backdrop: false
+    });
+  }
+
 };
 
 
