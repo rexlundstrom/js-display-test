@@ -111,5 +111,6 @@ Header
 }
 
 .evenBold {
-  font-weight: 700;
+  font-weight: bolder;
+  color: var(--rex-primary) !important;
 }
