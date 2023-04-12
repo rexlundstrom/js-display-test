@@ -26,7 +26,7 @@ function generateNumbers(start, end) {
   return numbersArray;
 };
 
-// places generated numbers on a page AND bolding even numbers
+// places generated numbers on a page AND bolding prime numbers
 // View function
 function displayNumbers (numbers) {
 

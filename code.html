@@ -133,19 +133,27 @@ function generateNumbers(start, end) {
   return numbersArray;
 };
 
-// places generated numbers on a page AND bolding even numbers
+// places generated numbers on a page AND bolding prime numbers
 // View function
 function displayNumbers (numbers) {
 
   let results = '';
 
+  const isPrime = (num) => {
+    if (num < 2) return false;
+    for (let i = 2; i <= num/2; i++) {
+      if (num % i === 0) return false
+    }
+    return true;
+  }
+
   for (let i = 0; i < numbers.length; i++) {
     let currNumber = numbers[i];
 
-    if (currNumber % 2 === 0) {
-      results+= '&lttr>&lttd class="evenBold">' + currNumber + "&lt/td>&lt/tr>"; 
+    if (isPrime(currNumber)) {
+      results += '&lt;tr>&lt;td class="evenBold">' + currNumber + "&lt;/td>&lt;/tr>";
     } else {
-      results+= "&lttr>&lttd>" + currNumber + "&lt/td>&lt/tr>";
+      results += "&lt;tr>&lt;td>" + currNumber + "&lt;/td>&lt;/tr>";
     }
 
 
