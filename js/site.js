@@ -32,13 +32,21 @@ function displayNumbers (numbers) {
 
   let results = '';
 
+  const isPrime = (num) => {
+    if (num < 2) return false;
+    for (let i = 2; i <= num/2; i++) {
+      if (num % i === 0) return false
+    }
+    return true;
+  }
+
   for (let i = 0; i < numbers.length; i++) {
     let currNumber = numbers[i];
 
-    if (currNumber % 2 === 0) {
-      results+= '<tr><td class="evenBold">' + currNumber + "</td></tr>"; 
+    if (isPrime(currNumber)) {
+      results += '<tr><td class="evenBold">' + currNumber + "</td></tr>";
     } else {
-      results+= "<tr><td>" + currNumber + "</td></tr>";
+      results += "<tr><td>" + currNumber + "</td></tr>";
     }
 
 
