@@ -7,7 +7,7 @@ function getValues() {
   let startNumber = parseInt(startValue);
   let endNumber = parseInt(endValue);
 
-  if (typeof(startNumber) === 'number' && typeof(endNumber) === 'number') {
+  if (!isNaN(startNumber) && !isNaN(endNumber)) {
 
     let numbersArray = generateNumbers(startNumber, endNumber);
     displayNumbers(numbersArray);
