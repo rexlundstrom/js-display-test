@@ -184,22 +184,32 @@ function displayNumbers (numbers) {
           </p>
           <h5>displayNumbers</h5>
           <p>
-            this function not only displays our numbers on the document as its
-            name suggests, but it checks each number to see if it meets a
-            condition, and it can alter certain numbers in any way we tell it
-            to. This function could easily be programmed to have all multiples
-            of three in itallics, or only display numbers that contain a zero,
-            etc.
-          </p>
-          <p>
-            Together, these functions keep each piece of complexity separate, so
-            that it is easy to read, understand, and manipulate.
+            this function not only displays our numbers on the document, but it
+            checks each number to see if it meets a condition, and it can alter
+            certain numbers in any way we tell it to. This function could easily
+            be programmed to have all multiples of three in italics, or only
+            display numbers that contain a zero, etc.
+            <br /><br />
+            it disseminates prime from non-prime by taking a given number and
+            checking the remainder when it's divided by any lower number,
+            starting with 2 (since dividing by 0 or 1 is not helpful).
+            <br /><br />
+            An additional piece of efficiency in the code is that it stops
+            checking remainders if you are trying to divide by a number greater
+            than half of itself.
+            <br /><br />
+            For example, when checking if 7 is prime, we skip 0 and 1, we try to
+            divide by 2 but don't get a whole number. We try again with 3, and
+            still no whole number. But is there any reason to divide by 4, 5, 6,
+            or 7? Once you start dividing by numbers greater than half of their
+            own value, you're guaranteed to fail to find a whole integer. So the
+            code ceases trying, and declares 7 to be prime.
           </p>
         </div>
       </div>
     </main>
 
-<footer class="footer-main mt-3">
+    <footer class="footer-main mt-3">
       <div class="container">
         <div
           class="py-3 row row-cols-1 row-cols-md-3 align-items-center text-center gy-3"
@@ -304,9 +314,6 @@ function displayNumbers (numbers) {
         </div>
       </div>
     </footer>
-
-
-
 
     <!-- Bootstrap -->
     <script
